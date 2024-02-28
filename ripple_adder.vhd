@@ -33,9 +33,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity ripple_adder is
   Port ( 
-  A, B : in std_logic_vector(15 downto 0);
+  A, B : in std_logic_vector(3 downto 0);
   C0   : in std_logic;
-  Sout, C4 : out std_logic
+  C4   : out std_logic;
+  S    : out std_logic_vector(3 downto 0)
   );
 end ripple_adder;
 
@@ -60,7 +61,7 @@ U0: adder
         B => B(0),
         Cin => C0,
         Cout => c1,
-        S => Sout(0)
+        S => S(0)
     );
 U1: adder
     port map (
@@ -68,7 +69,7 @@ U1: adder
         B => B(1),
         Cin => C1,
         Cout => c2,
-        S => Sout(1)
+        S => S(1)
     );
 U2: adder
     port map (
@@ -76,7 +77,7 @@ U2: adder
         B => B(2),
         Cin => C2,
         Cout => c3,
-        S => Sout(2)
+        S => S(2)
     );
 U3: adder
     port map (
@@ -84,7 +85,7 @@ U3: adder
         B => B(3),
         Cin => C3,
         Cout => c4,
-        S => Sout(3)
+        S => S(3)
     );
 
 end Behavioral;
