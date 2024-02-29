@@ -56,25 +56,25 @@ when "0100" =>
 when "0101" =>
     Y <= "000" && A > B;
 when "0110" =>
-
+    Y <= A(2 downto 0) & '0';
 when "0111" =>
-
+    Y <= '1' & A(3 downto 1);
 when "1000" =>
-
+    Y <= shift_right(unsigned(A), 1);
 when "1001" =>
-
+    Y <= NOT A;
 when "1010" =>
-
-when "1011" =>
-
+    Y <= A AND B;
+when "10ss11" =>
+    Y <= A OR B;
 when "1100" =>
-
+    Y <= A XOR B;
 when "1101" =>
-
+    Y <= A XNOR B;
 when "1110" =>
-
+    Y <= A NAND B;
 when "1111" =>
-
+    Y <= A NOR B;
 end case;
 
 end Behavioral;
