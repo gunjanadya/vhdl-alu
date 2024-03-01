@@ -35,7 +35,7 @@ end my_alu;
 
 architecture Behavioral of my_alu is
 
-signal A_val, B_val, op_val : std_logic_vector (3 downto 1);
+signal A_val, B_val, op_val : std_logic_vector (3 downto 0);
 
 begin
 
@@ -62,7 +62,7 @@ begin
             when "0001" => Y <= std_logic_vector(unsigned (A_val) - unsigned (B_val));
             when "0010" => Y <= std_logic_vector(unsigned (A_val) + "0001");
             when "0011" => Y <= std_logic_vector(unsigned (A_val) - "0001");
-            when "0100" => Y <= std_logic_vector("10000" - unsigned (A_val));
+            when "0100" => Y <= std_logic_vector("1000" - unsigned (A_val));
             when "0101" =>
                 if A_val > B_val then
                     Y <= "0001";
