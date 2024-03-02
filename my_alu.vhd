@@ -28,8 +28,8 @@ use IEEE.std_logic_unsigned.all;
 entity my_alu is
   Port ( 
     clk, ld_a, ld_b, ld_o, rst : in std_logic;
-    ld_val  : in std_logic_vector (3 downto 0);
-    Y : out std_logic_vector (3 downto 0)
+    ld_val                     : in std_logic_vector (3 downto 0);
+    Y                          : out std_logic_vector (3 downto 0)
   );
 end my_alu;
 
